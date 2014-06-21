@@ -1,0 +1,11 @@
+Title: HTML generation
+Description: The script will generate HTML files for tests and answers
+
+Title: PDF generation
+Description: The script will generate PDF files for tests and answers
+
+Title: Difficulty
+Description: Script can generate easy or hard tests
+
+Title: Templates
+Description: Users can create templates for tests, which the script will fill with numbers (hard difficulty only)
