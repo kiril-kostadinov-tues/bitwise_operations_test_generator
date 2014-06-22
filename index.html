@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<div>a, = ?<br>int orig = 0x1ca7;<br>
+int insert = 0x9f32;<br>
+int a = orig | (insert &lt;&lt; 7);<br>
+</div>
+<div>b, = ?<br>int orig = 0x6daf;<br>
+int insert = 0xcfd3;<br>
+int b = orig | (insert &lt;&lt; 3);<br>
+</div>
+<div>AND, = ?<br>int orig = 0x34a8;<br>
+int insert = 0xcc40;<br>
+int a = orig | (insert &lt;&lt; 5);<br>
+int b = orig | (insert &lt;&lt; 3);<br>
+int AND = a &amp; b;<br>
+</div>
+<div>OR, = ?<br>int orig = 0x14d7;<br>
+int insert = 0x5ce7;<br>
+int a = orig | (insert &lt;&lt; 7);<br>
+int b = orig | (insert &lt;&lt; 8);<br>
+int OR = a &amp; b;<br>
+</div>
+<div>XOR, = ?<br>int orig = 0x369c;<br>
+int insert = 0xd0dd;<br>
+int a = orig | (insert &lt;&lt; 7);<br>
+int b = orig | (insert &lt;&lt; 5);<br>
+int XOR = a ^ b;<br>
+</div>
+<div>left, = ?<br>int i = 0x1bdd;<br>
+int left = i | (1 &lt;&lt; 11);<br>
+</div>
+<div>result, = ?<br>long value1 = 0xb2657aef;<br>
+long value2 = 0xd6942b9f;<br>
+int result = (value1 &lt;&lt; 4) ^ (value2 &gt;&gt; 2);<br>
+</div>
+<div>result, = ?<br>long value1 = 366;<br>
+long value2 = 662;<br>
+int result = (value1 &lt;&lt; 3) ^ (value2 &gt;&gt; 2);<br>
+</div>
+<div>a, = ?<br>long testValue = 0xd5949d36;<br>
+int a = 0;<br>
+if (testValue &amp; (1 &lt;&lt; 25))
+{
+a = 1;<br>
+}
+else
+{
+a = 2;<br>
+}</div>
+<div>a, result, = ?<br>long testValue = 0x3eeae0da;<br>
+int a = 0;<br>
+int result = 0
+if ((result = testValue &amp; testValue ^ testValue | (1 &lt;&lt; 14)))
+{
+a = 1;<br>
+}
+else
+{
+a = 2;<br>
+}</div>
+<div>result, = ?<br>int value1 = 539;<br>
+int value2 = 744;<br>
+int result = (value1 &lt;&lt; 4) ^ (value2 &gt;&gt; 1);<br>
+</div>
+<div>result, = ?<br>int value1 = 2667;<br>
+int value2 = 569;<br>
+int result = (value1 &lt;&lt; 2) ^ (value2 &gt;&gt; 1);<br>
+</div>
+</body></html>

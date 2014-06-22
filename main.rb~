@@ -11,37 +11,28 @@ class Task
 end
 
 class HtmlGenerator
-
-	attr_accessor :file_name
-
-	def initialize(filename)
-		@file_name = filename
-	end
-
-	def generate_html(tasks)
+	def generate_html(s)
 		builder = Nokogiri::HTML::Builder.new do |doc|
-
 		doc.html {
 			doc.body {
-				tasks.each do |current_task|
-					doc.div {
-						current_task.x.each do |current|
-							doc.text "#{current}, "
-						end
-						doc.text "= ?"
-						doc.br
-						current_task.body.each_char do |i|
-							doc.text i
-							if i == ';'
+				doc.table(border: 1) {
+					doc.tr {
+						doc.td {
+							doc.text "#{s.x} = ?"
 							doc.br
-						end		
-						end
+							s.body.each_char do |i|
+									doc.text i
+									if i == ';'
+										doc.br
+									end		
+							end
+						}
 					}
-				end
+				}
 			}
 		}
 		end
-		File.open(file_name, "w") { |file| file.write(builder.to_html) }
+		puts builder.to_html
 	end
 end
 
@@ -94,14 +85,7 @@ class HardTaskGenerator
 	end
 end
 
-tasks = []
-easy_task_generator = EasyTaskGenerator.new
-hard_task_generator = HardTaskGenerator.new
-html_generator = HtmlGenerator.new "index.html"
-for i in 1..12
-	tasks << hard_task_generator.generate_task(i)
-end	
-html_generator.generate_html(tasks)
-
-
+generator = EasyTaskGenerator.new
+p generator.generate_task(1)
+html_generator = HtmlGenerator.new
 
