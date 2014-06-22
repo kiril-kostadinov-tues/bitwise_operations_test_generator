@@ -1,0 +1,4 @@
+result
+long value1 = #{hex_length(8)};
+long value2 = #{hex_length(8)};
+int result = (value1 << #{dec_range(1..4)}) ^ (value2 >> #{dec_range(1..4)});

@@ -1,0 +1,4 @@
+result
+long value1 = #{dec_length(3)};
+long value2 = #{dec_length(3)};
+int result = (value1 << #{dec_range(1..4)}) ^ (value2 >> #{dec_range(1..4)});

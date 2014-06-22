@@ -1,0 +1,12 @@
+a,result
+long testValue = #{hex_length(8)};
+int a = 0;
+int result = 0
+if ((result = testValue & testValue ^ testValue | (1 << #{dec_range(1..32)})))
+{
+a = 1;
+}
+else
+{
+a = 2;
+}
