@@ -1,0 +1,4 @@
+result
+int value1 = #{dec_range(1..4095)};
+int value2 = #{dec_range(1..4095)};
+int result = (value1 << #{dec_range(1..4)}) ^ (value2 >> #{dec_range(1..4)});

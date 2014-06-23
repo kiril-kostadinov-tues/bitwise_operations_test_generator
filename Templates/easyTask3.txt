@@ -1,0 +1,6 @@
+AND
+int orig = 0x#{(num*(16**3) + num).to_s(16)};
+int insert = 0x#{num.to_s(16)};
+int a = orig | (insert << #{dec_range(1..12)});
+int b = orig | (insert << #{dec_range(1..12)});
+int AND = a & b;

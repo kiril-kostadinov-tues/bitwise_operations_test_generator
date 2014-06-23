@@ -1,3 +1,0 @@
-left
-int i = #{hex_length(4)};
-int left = i | (1 << #{dec_range(1..12)});

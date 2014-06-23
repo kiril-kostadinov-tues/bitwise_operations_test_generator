@@ -1,0 +1,4 @@
+a
+int orig = #{hex_length(4)};
+int insert = #{hex_length(4)};
+int a = orig | (insert << #{dec_range(1..12)});

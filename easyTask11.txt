@@ -1,4 +1,0 @@
-result
-int value1 = #{dec_range(1..511)};
-int value2 = #{dec_range(1..511)};
-int result = (value1 << #{dec_range(1..4)}) ^ (value2 >> #{dec_range(1..4)});
