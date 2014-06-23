@@ -67,6 +67,28 @@ class HtmlGenerator
 	end
 end
 
+class CFilesGenerator 
+
+	attr_accessor :file_name
+
+	def initialize(filename)
+		@file_name = filename;
+	end
+
+	def generate_c_file(task)
+		File.open(file_name, "w") do |file|
+			file.write("#include<stdio.h>\n")
+			file.write("\nint main() {\n")
+			file.write(task.body)
+			file.write("\n")
+			task.x.each do |current_x|
+				file.write("printf(\"\%d\\n\", #{current_x});\n")
+			end
+			file.write("return 0;\n}")
+		end
+	end
+end
+
 def hex_length(l)
 	num = "0x#{rand(1..((16**l) - 1)).to_s(16)}"
 end
@@ -122,6 +144,8 @@ hard_task_generator = HardTaskGenerator.new
 html_generator = HtmlGenerator.new 1
 for i in 1..12
 	tasks << hard_task_generator.generate_task(i)
+	c_file_generator = CFilesGenerator.new "current.c"
+	c_file_generator.generate_c_file tasks[i - 1]
 end
 html_generator.generate_html_test(tasks)
 
